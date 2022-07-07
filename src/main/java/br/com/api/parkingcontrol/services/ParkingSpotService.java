@@ -11,7 +11,8 @@ import lombok.RequiredArgsConstructor;
 public class ParkingSpotService {
 	
 	final ParkingSpotRepository parkingSpotRepository;
-
+	
+	// Save cadastro carro
 	public Object save(ParkingSpotModel parkingSpotModel) {
 		
 		return null;

@@ -1,5 +1,8 @@
 package br.com.api.parkingcontrol.services;
 
+import java.util.Optional;
+import java.util.UUID;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.domain.Page;
@@ -40,5 +43,14 @@ public class ParkingSpotService {
 
 	public Page<ParkingSpotModel> findAll(Pageable pageable) {
 		return parkingSpotRepository.findAll(pageable);
+	}
+
+	public Optional<ParkingSpotModel> findById(UUID id) {
+		return parkingSpotRepository.findById(id);
+	}
+	
+	@Transactional
+	public void delete(ParkingSpotModel parkingSpotModel) {
+		parkingSpotRepository.delete(parkingSpotModel);
 	}
 }
